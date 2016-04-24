@@ -4,8 +4,8 @@
 <style>
 div.slideDeck {
     display:none;
+    width:640px;
     align:center;
-    max-width:640px;
     height:400px;
 }
 
@@ -22,7 +22,6 @@ h1.header {
 }
 
 div.section {
-    height:350px;
     font-family:verdana;
     font-size:160%;
     padding:10px; 
@@ -40,7 +39,7 @@ div.footer {
 </head>
 <body class="w3-container">
 <br>
-<div class="w3-content w3-container" style="max-width:680px;position:relative;align=center">
+<div class="w3-content w3-container" style="width:680px;position:relative;align=center">
 <div class='slideDeck'>
 <div class='header'>
 <h1 class='header'>Adventures in Ruby</h1>
@@ -97,7 +96,89 @@ div.footer {
 </div>
 <div class='slideDeck'>
 <div class='header'>
-<h1 class='header'>Slide 2</h1>
+<h1 class='header'>What is a room?</h1>
+</div>
+<div class='section'>
+<ul>
+<li>An identifier</li>
+<li>A short description</li>
+<li>A long description</li>
+<li>Maybe contents</li>
+<li>Exits</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>What is an identifier?</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Unique</li>
+<li>Easily identified</li>
+<li>Ruby uses Symbols for this</li>
+<li>Symbols look like: :Symbol_2</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Symbol facts</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Start with a colon</li>
+<li>Contain Letters, Numbers and Underscores</li>
+<li>May contain other characters</li>
+<li>:"a weird symbol"</li>
+<li>Operators are symbols: :+ :- :<<</li>
+<li>Other special characters: @$ !?</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>About those special cases...</h1>
+</div>
+<div class='section'>
+<ul>
+<li>@ means "Instance Variable"</li>
+<li>@@ means "Class Variable"</li>
+<li>$ means "Global Variable"</li>
+<br>
+<li>! means "Mutate"</li>
+<li>? means "Boolean"</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Short Description</h1>
+</div>
+<div class='section'>
+<ul>
+<li><div class='w3-code'>value = 'A String of characters'</div></li>
+<li>enclosed by quotes</li>
+<li>Use single quotes unless</li>
+<li><div class='w3-code'>formatting = "interpreting #{value}"</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Long Description</h1>
+</div>
+<div class='section'>
+<ul>
+<li><div class='w3-code'>long = <<-endmarker<br/>This is the content of the string<br/>More content<br/>endmarker</div></li>
+<li><div class='w3-code'>long2 = %q{This is the content of the string<br/>More content}</div></li>
+</ul>
+</div>
+</div>
+<!-- copy next 11 lines then delete this one
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>New Slide</h1>
 </div>
 <div class='section'>
 <ul>
@@ -105,6 +186,7 @@ div.footer {
 </ul>
 </div>
 </div>
+-->
 <div class='footer'>
 &copy;Faye Salwin 2016
 </div>
