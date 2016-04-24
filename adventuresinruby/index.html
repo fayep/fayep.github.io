@@ -1,8 +1,159 @@
 <html>
 <head>
 <title>Adventures in Ruby</title>
+<style>
+div.slideDeck {
+    display:none;
+    align:center;
+    max-width:640px;
+    height:400px;
+}
+
+div.header {
+    background-color:deepskyblue;
+    font-family:verdana;
+    color:white;
+    text-align:left;
+    padding:10px;
+}
+
+h1.header {
+    font-size:250%;
+}
+
+div.section {
+    height:350px;
+    font-family:verdana;
+    font-size:160%;
+    padding:10px; 
+}
+
+div.footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:1px; 
+}
+</style>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 </head>
-<body>
-<h1>Adventures in Ruby</h1>
+<body class="w3-container">
+<br>
+<div class="w3-content w3-container" style="max-width:680px;position:relative;align=center">
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Adventures in Ruby</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Learning Ruby by writing an adventure game.</li>
+<br>
+<br>
+<li>Lesson 1: Variables and Constants</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>What is an adventure game?</h1>
+</div>
+<div class='section'>
+<ul>
+<li>An interactive fiction</li>
+<li>Text is used to describe the environment</li>
+<li>Commands are input to interact</li>
+<li>Usually of the form: <div class='w3-code'>&gt; GO NORTH<BR>&gt; OPEN BOX</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>What is Ruby?</h1>
+</div>
+<div class='section'>
+<ul>
+<li>An interpreted programming language</li>
+<li>Created by Yukihiro Matsumoto</li>
+<li>Everything is an Object</li>
+<li>Everything can return a value</li>
+<li>Metaprogramming is possible</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Parts of an Adventure Game</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Rooms</li>
+<li>Objects</li>
+<li>Player</li>
+<li>Keys</li>
+<li>Doors</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Slide 2</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Point</li>
+</ul>
+</div>
+</div>
+<div class='footer'>
+&copy;Faye Salwin 2016
+</div>
+<a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">&#10094;</a>
+<a class="w3-btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(+1)">&#10095;</a>
+</div>
 </body>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("slideDeck");
+    if (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    x[slideIndex-1].style.display = "block"; 
+}
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        plusDivs(-1);
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        plusDivs(+1);
+    }
+    else if (e.keyCode == '37') {
+        // left arrow
+        plusDivs(-1);
+    }
+    else if (e.keyCode == '39') {
+        // right arrow
+        plusDivs(+1);
+    }
+
+}
+
+document.onkeydown = checkKey;
+</script>
 </html>
