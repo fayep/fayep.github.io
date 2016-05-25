@@ -24,7 +24,7 @@ h1.header {
 div.section {
     font-family:verdana;
     font-size:160%;
-    padding:10px; 
+    padding:10px;
 }
 
 div.footer {
@@ -32,7 +32,7 @@ div.footer {
     color:white;
     clear:both;
     text-align:center;
-    padding:1px; 
+    padding:1px;
 }
 </style>
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -176,6 +176,129 @@ div.footer {
 </ul>
 </div>
 </div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Arrays / Lists</h1>
+</div>
+<div class='section'>
+<ul>
+<li><div class='w3-code'>a = []</div></li>
+<li><div class='w3-code'>b = ['a',2,:charlie]</div></li>
+<li><div class='w3-code'>c = 'this can be an array'</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Arrays / Lists</h1>
+</div>
+<div class='section'>
+<ul>
+<li><div class='w3-code'>a.empty?; b[1]</div></li>
+<li><div class='w3-code'>c.each_char</div></li>
+<li><div class='w3-code'>c.each_byte</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Hashes / Structs</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Store keys and values</li>
+<li>Things associated with each other</li>
+<li>Group things</li>
+<li><div class='w3-code'>teacher = {<br/>
+&nbsp;&nbsp;name: "Faye",<br/>
+&nbsp;&nbsp;nationality: :welsh,<br/>
+&nbsp;&nbsp;status: :married<br/>
+}</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Blocks</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Blocks wrap code</li>
+<li>Blocks return the last value in them</li>
+<li><div class='w3-code'>begin<br/>
+&nbsp;&nbsp;c = 'test'<br/>
+end</div></li>
+<li>What is the value of c after this?
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>More Blocks/h1>
+</div>
+<div class='section'>
+<ul>
+<li>Braces can be used instead of begin/end
+<li><div class='w3-code'>{c = 'test'}</div></li>
+<li>We try to only use braces for single line blocks
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Single line blocks?</h1>
+</div>
+<div class='section'>
+<ul>
+<li>A little can go a long way</li>
+<li><div class='w3-code'>mylist=['foo','bar','baz']<br/>
+mylist.each { |item| puts item}</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Iteration</h1>
+</div>
+<div class='section'>
+<ul>
+<li><div class='w3-code'>['foo','bar','baz'].each { |item| puts item }</div></li>
+<li><div class='w3-code'>(1..10).each { |item| puts item }</div></li>
+<li><div class='w3-code'>%i(:a :b :c :d).map(&:to_s)</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>What's that % stuff?</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Ways to group to make things easier</li>
+<li>/foo/ == %r{foo}</li>
+<li>'foo bar' == %q{foo bar}</li>
+<li>"foo bar" == %Q{foo bar}</li>
+<li>[:foo, :bar] == %i{foo bar}</li>
+<li>['foo', 'bar'] == %w{foo bar}</li>
+<li>["foo", "bar"] == %W{foo bar}</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Conditionals</h1>
+</div>
+<div class='section'>
+<ul>
+<li>How to do either/or</li>
+<li><div class='w3-code'>if <i>&lt;condition&gt;</i><br/>
+&nbsp;&nbsp;puts 'Condition is true'<br/>
+else<br/>
+&nbsp;&nbsp;puts 'No can do'<br/>
+end</div></li>
+</ul>
+</div>
+</div>
 <!-- copy next 11 lines then delete this one
 <div class='slideDeck'>
 <div class='header'>
@@ -206,12 +329,12 @@ function plusDivs(n) {
 function showDivs(n) {
     var i;
     var x = document.getElementsByClassName("slideDeck");
-    if (n > x.length) {slideIndex = 1} 
+    if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none"; 
+        x[i].style.display = "none";
     }
-    x[slideIndex-1].style.display = "block"; 
+    x[slideIndex-1].style.display = "block";
 }
 
 function checkKey(e) {
