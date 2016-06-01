@@ -264,7 +264,7 @@ mylist.each { |item| puts item}</div></li>
 <ul>
 <li><div class='w3-code'>['foo','bar','baz'].each { |item| puts item }</div></li>
 <li><div class='w3-code'>(1..10).each { |item| puts item }</div></li>
-<li><div class='w3-code'>%i(:a :b :c :d).map(&:to_s)</div></li>
+<li><div class='w3-code'>%i(a b c d).map(&:to_s)</div></li>
 </ul>
 </div>
 </div>
@@ -296,6 +296,55 @@ mylist.each { |item| puts item}</div></li>
 else<br/>
 &nbsp;&nbsp;puts 'No can do'<br/>
 end</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Asking for input</h1>
+</div>
+<div class='section'>
+<ul>
+<li><div class='w3-code'>yourname = gets<br/>
+puts "I think #{yourname} is your name."</div></li>
+<li>Includes the "enter" you pressed at the end.</li>
+<li>The string method "chomp" eats the enter from the end</li>
+<li>yourname.chomp or gets.chomp work</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Case..when..else..end</h1>
+</div>
+<div class='section'>
+<ul>
+<li>If you're comparing the same variable to lots of things, then you should use case.  It has blocks like if..else..end but instead of specifying the entire condition each time, you specify the variable and the matches separately.</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Case example</h1>
+</div>
+<div class='section'>
+<ul>
+<li><div class='w3-code'>puts case gets.chomp<br/>
+&nbsp;&nbsp;when 'north' then 'you walk north'<br/>
+&nbsp;&nbsp;when 'east' then 'you swim east'<br/>
+&nbsp;&nbsp;when 'west' then 'it is dark'<br/>
+&nbsp;&nbsp;else "you can't go that way"<br/>
+end</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Try it yourself!</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Put together some of the things you've learned so far and make a simple game!</li>
 </ul>
 </div>
 </div>
