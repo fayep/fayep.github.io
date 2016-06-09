@@ -348,6 +348,55 @@ end</div></li>
 </ul>
 </div>
 </div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Methods (functions)</h1>
+</div>
+<div class='section'>
+<ul>
+<li><div class='w3-code'>def <i>methodname</i><br/>
+&nbsp;&nbsp;<i>code</i><br/>
+end</div></li>
+<li><div class='w3-code'>define_method(<i>:methodname</i>) do<br/>
+&nbsp;&nbsp;<i>code</i><br/>
+end</div></li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Objects/Modules/Classes</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Remember hashes?</li>
+<li>A better way to organize data</li>
+<li>Combine attributes and methods</li>
+<li>Use methods to access attributes</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Example</h1>
+</div>
+<div class='section'><div class='w3-code'><div class='w3-small'>class IrbView < Adventure::View<br/>
+&nbsp;&nbsp;def <<(content)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;case content<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;when String<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts content<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;when Array<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.each do |item|<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts " #{item}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise "Don't know how to output #{content.class} yet."<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
+&nbsp;&nbsp;end<br/>
+end</div>
+</div>
+</div>
+</div>
 <!-- copy next 11 lines then delete this one
 <div class='slideDeck'>
 <div class='header'>
