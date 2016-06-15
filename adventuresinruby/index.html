@@ -380,8 +380,8 @@ end</div></li>
 <div class='header'>
 <h1 class='header'>Example</h1>
 </div>
-<div class='section'><div class='w3-code'><div class='w3-small'>class IrbView < Adventure::View<br/>
-&nbsp;&nbsp;def <<(content)<br/>
+<div class='section'><div class='w3-code'><div class='w3-small'>class IrbView &lt; Adventure::View<br/>
+&nbsp;&nbsp;def &lt;&lt;(content)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;case content<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;when String<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts content<br/>
@@ -395,6 +395,144 @@ end</div></li>
 &nbsp;&nbsp;end<br/>
 end</div>
 </div>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Inheritance</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Why was there a &lt; after the classname?</li>
+<li>If an object is like another we can inherit</li>
+<li>What does that mean?</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Base class for views</h1>
+</div>
+<div class='section'><div class='w3-code'><div class='w3-small'>module Adventure<br/>
+&nbsp;&nbsp;class View<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;class &lt;&lt; self<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def instance(klass=nil)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@instance ||= klass.new<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def &lt;&lt;(content)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise "no instance" unless @@instance<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@instance &lt;&lt; content<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
+&nbsp;&nbsp;end<br/>
+end</div></div>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Lots to take in!</h1>
+</div>
+<div class='section'>
+<ul>
+<li>module Adventure</li>
+<ul><li>this is to group our classes</li></ul>
+<li>class View</li>
+<ul><li>no &lt; means this is a base class.</li></ul>
+<li>class &lt;&lt; self</li>
+<ul><li>syntax for defining class methods</li>
+<li>can be called without an instance</li>
+<li>yes, that means new is a class method</li>
+</ul>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Class methods</h1>
+</div>
+<div class='section'>
+<ul>
+<li>This technique is often used for logging</li>
+<li>@@ means the variable is a class attribute</li>
+<li>it has the same value everywhere.</li>
+<li>setting with ||= means don't change the value if it has one.</li>
+<li>class is a reserved word so we spell it oddly</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>So what does this do?</h1>
+</div>
+<div class='section'>
+<ul>
+<li>View << "stuff"</li>
+<li>Delegates the method to our chosen class instance</li>
+<li>Gives us a general way to do something we can be more specific about later</li>
+<li>This is a simple "abstraction"</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Recap of our child class</h1>
+</div>
+<div class='section'><div class='w3-code'><div class='w3-small'>class IrbView &lt; Adventure::View<br/>
+&nbsp;&nbsp;def &lt;&lt;(content)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;case content<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;when String<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts content<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;when Array<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.each do |item|<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts " #{item}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise "Don't know how to output #{content.class} yet."<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
+&nbsp;&nbsp;end<br/>
+end</div>
+</div>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>You get an object!</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Hashes, Strings and Arrays are objects</li>
+<li>You can store objects in objects</li>
+<li>This lets you structure your data!</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Create a tiny map!</h1>
+</div>
+<div class='section'>
+<ul>
+<li>Each room will be an object</li>
+<li>Define methods to move from place to place</li>
+<li>Store the rooms in a hash</li>
+<li>map = { entrance: Entrance.new }</li>
+<li>player = Player.new(map, :entrance)</li>
+<li>Player.look</li>
+<li>Player.move(:east)</li>
+</ul>
+</div>
+</div>
+<div class='slideDeck'>
+<div class='header'>
+<h1 class='header'>Hints</h1>
+</div>
+<div class='section'>
+<ul>
+<li>All Rooms are similar</li>
+<li>Entrance is a class representing the entrance room</li>
+<li>Player is a class representing the player</li>
+</ul>
 </div>
 </div>
 <!-- copy next 11 lines then delete this one
